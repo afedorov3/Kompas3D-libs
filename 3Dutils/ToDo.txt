@@ -1,0 +1,4 @@
+Var export file name +embodiment name
+Sketch orientation
+Incremental orientation
+editbox calculations

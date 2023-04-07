@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BatchExport", "BatchExport\BatchExport.vcxproj", "{61A75D49-F7B3-43F5-B7A0-23FD85932348}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3Dutils", "3Dutils\3Dutils.vcxproj", "{03646229-992A-4FCF-AF3F-B166708F8C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Debug|Win32.ActiveCfg = Debug|Win32
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Debug|Win32.Build.0 = Debug|Win32
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Debug|x64.ActiveCfg = Debug|x64
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Debug|x64.Build.0 = Debug|x64
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Release|Win32.ActiveCfg = Release|Win32
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Release|Win32.Build.0 = Release|Win32
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Release|x64.ActiveCfg = Release|x64
+		{61A75D49-F7B3-43F5-B7A0-23FD85932348}.Release|x64.Build.0 = Release|x64
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Debug|Win32.Build.0 = Debug|Win32
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Debug|x64.ActiveCfg = Debug|x64
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Debug|x64.Build.0 = Debug|x64
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Release|Win32.ActiveCfg = Release|Win32
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Release|Win32.Build.0 = Release|Win32
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Release|x64.ActiveCfg = Release|x64
+		{03646229-992A-4FCF-AF3F-B166708F8C5D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

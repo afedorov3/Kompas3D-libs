@@ -1,0 +1,46 @@
+#ifdef APSTUDIO_INVOKED
+  #error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+#define concat(x,y) x##y
+
+concat(1,IDR_FCSEL)              BITMAP "res\\wand16.bmp"
+concat(1,IDR_FCSET)              BITMAP "res\\spectrum16.bmp"
+concat(1,IDR_ORIENT)             BITMAP "res\\orient16.bmp"
+concat(1,IDR_VAREXP)             BITMAP "res\\fexp16.bmp"
+concat(1,IDR_VARIMP)             BITMAP "res\\fimp16.bmp"
+concat(1,IDR_VERINFO)            BITMAP "res\\info16.bmp"
+
+concat(2,IDR_FCSEL)              BITMAP "res\\wand24.bmp"
+concat(2,IDR_FCSET)              BITMAP "res\\spectrum24.bmp"
+concat(2,IDR_ORIENT)             BITMAP "res\\orient24.bmp"
+concat(2,IDR_VAREXP)             BITMAP "res\\fexp24.bmp"
+concat(2,IDR_VARIMP)             BITMAP "res\\fimp24.bmp"
+concat(2,IDR_VERINFO)            BITMAP "res\\info24.bmp"
+
+concat(3,IDR_FCSEL)              BITMAP "res\\wand32.bmp"
+concat(3,IDR_FCSET)              BITMAP "res\\spectrum32.bmp"
+concat(3,IDR_ORIENT)             BITMAP "res\\orient32.bmp"
+concat(3,IDR_VAREXP)             BITMAP "res\\fexp32.bmp"
+concat(3,IDR_VARIMP)             BITMAP "res\\fimp32.bmp"
+concat(3,IDR_VERINFO)            BITMAP "res\\info32.bmp"
+
+concat(4,IDR_FCSEL)              BITMAP "res\\wand48.bmp"
+concat(4,IDR_FCSET)              BITMAP "res\\spectrum48.bmp"
+concat(4,IDR_ORIENT)             BITMAP "res\\orient48.bmp"
+concat(4,IDR_VAREXP)             BITMAP "res\\fexp48.bmp"
+concat(4,IDR_VARIMP)             BITMAP "res\\fimp48.bmp"
+concat(4,IDR_VERINFO)            BITMAP "res\\info48.bmp"
+
+// Меню
+IDR_LIBID MENU
+BEGIN
+  MENUITEM " Грани: выделить по цвету",        IDR_FCSEL
+  MENUITEM " Грани: изменить цвет",            IDR_FCSET
+  MENUITEM " Ориентация",                      IDR_ORIENT
+  MENUITEM " Переменные: экспорт",             IDR_VAREXP
+  MENUITEM " Переменные: импорт",              IDR_VARIMP
+  MENUITEM "О библиотеке"                      IDR_VERINFO
+END
+
+/////////////////////////////////////////////////////////////////////////////

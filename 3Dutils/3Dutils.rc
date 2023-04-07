@@ -1,0 +1,336 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include "version.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT\r\n"
+    "#pragma code_page(1251)\r\n"
+    "#endif //_WIN32\r\n"
+    "#endif\r\n"
+    "#include ""res\\3Dutils.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\3Dutils.ico"
+IDI_ICONROTX            ICON                    "res\\rotX.ico"
+IDI_ICONROTY            ICON                    "res\\rotY.ico"
+IDI_ICONROTZ            ICON                    "res\\rotZ.ico"
+IDI_ICONEXTUP           ICON                    "res\\font-awesome-double-angle-up.ico"
+IDI_ICONEXTDN           ICON                    "res\\font-awesome-double-angle-down.ico"
+IDI_ICONDOCARROFF       ICON                    "res\\doc-arrow-in-gray.ico"
+IDI_ICONDOCARRON        ICON                    "res\\doc-arrow-in-blue.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_COLORCHANGEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 81
+    END
+
+    IDD_SELECTPARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_ORIENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COLORCHANGEDLG DIALOGEX 0, 0, 147, 88
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Изменить цвет"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Отмена",IDCANCEL,75,67,50,14
+    DEFPUSHBUTTON   "Изменить",IDOK,17,67,50,14
+    CONTROL         "По источнику",IDC_SOURCERD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,14,43,58,11
+    CONTROL         "По исходному объекту",IDC_OWNERRD,"Button",BS_AUTORADIOBUTTON,14,30,58,11
+    CONTROL         "Вручную",IDC_CUSTOMRD,"Button",BS_AUTORADIOBUTTON,14,17,58,11
+    CONTROL         "",IDC_CHANGEMFCCOLORBUTTON,"MfcColorButton",WS_TABSTOP,79,13,59,42
+    GROUPBOX        "Установить цвет",IDC_SETCOLORDESCR,7,7,133,50
+END
+
+IDD_SELECTPARAM DIALOGEX 0, 0, 163, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Параметры выделения"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Отмена",IDCANCEL,90,124,50,14
+    DEFPUSHBUTTON   "Выделить",IDOK,21,124,50,14
+    COMBOBOX        IDC_BELONGS,7,19,64,16,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_HASCOLOR,78,19,78,13,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CHECKBOX        "Вручную",IDC_USECOLORCUSTOM,12,46,57,10
+    CHECKBOX        "По исходному",IDC_USECOLOROWNER,12,57,57,10
+    CHECKBOX        "По источнику",IDC_USECOLORSOURCE,12,68,57,10
+    CONTROL         "",IDC_SELMFCCOLORBUTTON,"MfcColorButton",WS_TABSTOP,84,41,69,41
+    CONTROL         "",IDC_TOLERANCESLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,7,94,149,20
+    LTEXT           "Принадлежность",IDC_BELONGSDESCR,7,8,58,8
+    LTEXT           "Цвет",IDC_HASCOLORDESCR,78,8,18,8,SS_CENTERIMAGE
+    GROUPBOX        "Цвет (лог. ИЛИ)",IDC_USECOLORDESCR,7,37,73,45
+    CONTROL         "Допуск совпадения цвета",IDC_TOLERANCEDESCR,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,13,85,139,8
+END
+
+IDD_ORIENT DIALOGEX 0, 0, 251, 97
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Ориентация"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDITX,24,7,37,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITY,24,32,37,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITZ,24,57,37,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SLIDERX,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,61,2,189,23
+    CONTROL         "",IDC_SLIDERY,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,61,27,189,23
+    CONTROL         "",IDC_SLIDERZ,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,61,52,189,23
+    DEFPUSHBUTTON   "OK",IDOK,139,78,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,195,78,50,14
+    PUSHBUTTON      "Сброс",IDC_RESET,83,78,50,14
+    CONTROL         "Просмотр",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,80,48,10
+    ICON            IDI_ICONROTX,IDC_ICONX,7,8,20,20,SS_NOTIFY | SS_REALSIZEIMAGE
+    ICON            IDI_ICONROTY,IDC_ICONY,7,33,20,20,SS_NOTIFY | SS_REALSIZEIMAGE
+    ICON            IDI_ICONROTZ,IDC_ICONZ,7,58,20,20,SS_NOTIFY | SS_REALSIZEIMAGE
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ORIENTACCELERATORS ACCELERATORS
+BEGIN
+    VK_RETURN,      ID_ORIENTACCELERATOR_RETURN, VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_COLORCHANGEDLG DLGINIT
+BEGIN
+    IDC_CHANGEMFCCOLORBUTTON, 0x37c, 215, 0
+0x4d3c, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 0x6f74, 0x5f6e, 0x6e45, 
+0x6261, 0x656c, 0x744f, 0x6568, 0x4272, 0x7475, 0x6f74, 0x3e6e, 0x5254, 
+0x4555, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 
+0x455f, 0x616e, 0x6c62, 0x4f65, 0x6874, 0x7265, 0x7542, 0x7474, 0x6e6f, 
+0x3c3e, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 0x455f, 
+0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x7542, 0x7474, 
+0x6e6f, 0x463e, 0x4c41, 0x4553, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 
+0x7542, 0x7474, 0x6e6f, 0x455f, 0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 
+0x7461, 0x6369, 0x7542, 0x7474, 0x6e6f, 0x3c3e, 0x464d, 0x4343, 0x6c6f, 
+0x726f, 0x7542, 0x7474, 0x6e6f, 0x435f, 0x6c6f, 0x6d75, 0x736e, 0x6f43, 
+0x6e75, 0x3e74, 0x3c35, 0x4d2f, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 
+0x6f74, 0x5f6e, 0x6f43, 0x756c, 0x6e6d, 0x4373, 0x756f, 0x746e, "\076" 
+    0
+END
+
+IDD_SELECTPARAM DLGINIT
+BEGIN
+    IDC_BELONGS, 0x403, 4, 0
+0xf1c2, 0x00e5, 
+    IDC_BELONGS, 0x403, 13, 0
+0xe0d2, 0xe620, 0x20e5, 0xe5e4, 0xe0f2, 0xfceb, "\000" 
+    IDC_BELONGS, 0x403, 11, 0
+0xeed2, 0xe620, 0x20e5, 0xe5f2, 0xeeeb, "\000" 
+    IDC_HASCOLOR, 0x403, 17, 0
+0xfbc2, 0xe5e4, 0xe5eb, 0xeded, 0xe9ee, 0xe320, 0xe0f0, 0xe8ed, "\000" 
+    IDC_HASCOLOR, 0x403, 16, 0
+0xead3, 0xe7e0, 0xf2e0, 0x20fc, 0xf0e2, 0xf7f3, 0xf3ed, 0x00fe, 
+    IDC_SELMFCCOLORBUTTON, 0x37c, 215, 0
+0x4d3c, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 0x6f74, 0x5f6e, 0x6e45, 
+0x6261, 0x656c, 0x744f, 0x6568, 0x4272, 0x7475, 0x6f74, 0x3e6e, 0x5254, 
+0x4555, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 
+0x455f, 0x616e, 0x6c62, 0x4f65, 0x6874, 0x7265, 0x7542, 0x7474, 0x6e6f, 
+0x3c3e, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 0x455f, 
+0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x7542, 0x7474, 
+0x6e6f, 0x463e, 0x4c41, 0x4553, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 
+0x7542, 0x7474, 0x6e6f, 0x455f, 0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 
+0x7461, 0x6369, 0x7542, 0x7474, 0x6e6f, 0x3c3e, 0x464d, 0x4343, 0x6c6f, 
+0x726f, 0x7542, 0x7474, 0x6e6f, 0x435f, 0x6c6f, 0x6d75, 0x736e, 0x6f43, 
+0x6e75, 0x3e74, 0x3c35, 0x4d2f, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 
+0x6f74, 0x5f6e, 0x6f43, 0x756c, 0x6e6d, 0x4373, 0x756f, 0x746e, "\076" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VER_VERSION_FILEVERSION
+ PRODUCTVERSION VER_VERSION_FILEVERSION
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904b0"
+        BEGIN
+            VALUE "FileDescription", VER_FILE_DESCRIPTIONL
+            VALUE "FileVersion", VER_VERSION_DISPLAY
+            VALUE "InternalName", VER_PRODUCT_NAME
+            VALUE "LegalCopyright", VER_DATE_AUTHOR
+            VALUE "OriginalFilename", VER_FILE_NAME
+            VALUE "ProductName", VER_PRODUCT_NAME
+            VALUE "ProductVersion", VER_VERSION_DISPLAY
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_LIBID               VER_PRODUCT_NAME
+END
+
+STRINGTABLE
+BEGIN
+    IDR_API5                "kAPI5.dll"
+    IDR_API7                "kAPI7.dll"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOC               "Документ не открыт или не является моделью"
+    IDS_NOAPI               "Невозможно получить интерфейс API Компас3D"
+END
+
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "afxres.rc"         // Standard components
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+#endif
+#include "res\3Dutils.rc2"  // non-Microsoft Visual C++ edited resources
+
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

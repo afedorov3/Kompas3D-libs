@@ -1,0 +1,46 @@
+#ifdef APSTUDIO_INVOKED
+  #error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+#define concat(x,y) x##y
+
+concat(1,IDR_BATCHEXPORT)        BITMAP "res\\batchexport16.bmp"
+concat(1,IDR_EMBENUM)            BITMAP "res\\list16.bmp"
+concat(1,IDR_FEAENUM)            BITMAP "res\\list16.bmp"
+concat(1,IDR_VAREXP)             BITMAP "res\\texp16.bmp"
+concat(1,IDR_VARIMP)             BITMAP "res\\timp16.bmp"
+concat(1,IDR_VERINFO)            BITMAP "res\\info16.bmp"
+
+concat(2,IDR_BATCHEXPORT)        BITMAP "res\\batchexport24.bmp"
+concat(2,IDR_EMBENUM)            BITMAP "res\\list24.bmp"
+concat(2,IDR_FEAENUM)            BITMAP "res\\list24.bmp"
+concat(2,IDR_VAREXP)             BITMAP "res\\texp24.bmp"
+concat(2,IDR_VARIMP)             BITMAP "res\\timp24.bmp"
+concat(2,IDR_VERINFO)            BITMAP "res\\info24.bmp"
+
+concat(3,IDR_BATCHEXPORT)        BITMAP "res\\batchexport32.bmp"
+concat(3,IDR_EMBENUM)            BITMAP "res\\list32.bmp"
+concat(3,IDR_FEAENUM)            BITMAP "res\\list32.bmp"
+concat(3,IDR_VAREXP)             BITMAP "res\\texp32.bmp"
+concat(3,IDR_VARIMP)             BITMAP "res\\timp32.bmp"
+concat(3,IDR_VERINFO)            BITMAP "res\\info32.bmp"
+
+concat(4,IDR_BATCHEXPORT)        BITMAP "res\\batchexport48.bmp"
+concat(4,IDR_EMBENUM)            BITMAP "res\\list48.bmp"
+concat(4,IDR_FEAENUM)            BITMAP "res\\list48.bmp"
+concat(4,IDR_VAREXP)             BITMAP "res\\texp48.bmp"
+concat(4,IDR_VARIMP)             BITMAP "res\\timp48.bmp"
+concat(4,IDR_VERINFO)            BITMAP "res\\info48.bmp"
+
+// Меню
+IDR_LIBID MENU
+BEGIN
+  MENUITEM " Пакетный экспорт"                 IDR_BATCHEXPORT
+  MENUITEM " Перечисление исполнений"          IDR_EMBENUM
+  MENUITEM " Перечисление элементов"           IDR_FEAENUM
+  MENUITEM " Шаблоны: экспорт"                 IDR_VAREXP
+  MENUITEM " Шаблоны: импорт"                  IDR_VARIMP
+  MENUITEM "О библиотеке"                      IDR_VERINFO
+END
+
+/////////////////////////////////////////////////////////////////////////////

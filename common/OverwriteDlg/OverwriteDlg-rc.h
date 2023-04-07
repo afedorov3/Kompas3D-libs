@@ -1,0 +1,20 @@
+
+#define IDD_OVRDLG                      199
+#define IDC_OVRENTITY                   1980
+#define IDC_OVRDETAIL                   1981
+#define IDC_OVRPROMPT                   1982
+#define IDC_OVRNO                       1983
+#define IDC_OVRNONE                     1984
+#define IDC_OVRYES                      1985
+#define IDC_OVRALL                      1986
+#define IDR_OVRACCELERATORS             1995
+#define ID_OVRACCELERATOR_CTRLC         41990
+#define ID_OVRACCELERATOR_CTRLINS       41991
+#define ID_OVRACCELERATOR_Y             41992
+#define ID_OVRACCELERATOR_YR            41993
+#define ID_OVRACCELERATOR_N             41994
+#define ID_OVRACCELERATOR_NR            41995
+#define ID_OVRACCELERATOR_A             41996
+#define ID_OVRACCELERATOR_AR            41997
+#define ID_OVRACCELERATOR_S             41998
+#define ID_OVRACCELERATOR_SR            41999

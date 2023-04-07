@@ -1,0 +1,5 @@
+!!!255 attr!!!
++ Attribute save request on next/cancel button
++ attribute addition/deletion
+! Ctrl+Ins and copy selection in cell conflict
++ rebuild without redraw

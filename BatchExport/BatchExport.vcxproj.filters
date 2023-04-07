@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CGridListCtrlEx">
+      <UniqueIdentifier>{eefef548-24c6-4b37-8e7a-c0174c4dc15a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CGridListCtrlEx\Header Files">
+      <UniqueIdentifier>{320ea495-786b-4cce-bd33-1ec44694d857}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="CGridListCtrlEx\Source Files">
+      <UniqueIdentifier>{87fe6c38-6dfd-4360-b48f-bcaca22b64e9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3fbd7172-6a9f-48d4-a8cb-638afab37433}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{443de9fd-286f-4cb6-bc03-6d8d039f3a41}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{fa948a7b-6354-4498-93ce-2402b1821c11}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="CSV">
+      <UniqueIdentifier>{741d5a02-6ebe-4976-884c-fc182c8120e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridViewDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyGridListCtrlEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridListCtrlEx.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitCombo.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitEdit.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitImage.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitText.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridRowTraitText.cpp">
+      <Filter>CGridListCtrlEx\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\OverwriteDlg\OverwriteDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BatchExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridViewDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyGridListCtrlEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridListCtrlEx.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTrait.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitCombo.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitEdit.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitImage.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitText.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTrait.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitText.h">
+      <Filter>CGridListCtrlEx\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\CSVParser.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\CSVWriter.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\document.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\OverwriteDlg\OverwriteDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BatchExport.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="BatchExport.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BatchExport.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\common\OverwriteDlg\OverwriteDlg.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\GridViewDlg.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\batchexport.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3fbd7172-6a9f-48d4-a8cb-638afab37433}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{443de9fd-286f-4cb6-bc03-6d8d039f3a41}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{fa948a7b-6354-4498-93ce-2402b1821c11}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="NumericEdit">
+      <UniqueIdentifier>{9fa61f4d-644b-422a-8841-8ecd237458d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSV">
+      <UniqueIdentifier>{9f0d79f8-fe66-4be9-9687-455deb1b3d04}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3Dutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorChangeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectParmDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrientDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumericEdit\NumericEdit.cpp">
+      <Filter>NumericEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="MySliderCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\OverwriteDlg\OverwriteDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3Dutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorChangeDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectParmDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrientDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NumericEdit\NumericEdit.h">
+      <Filter>NumericEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="MySliderCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSV\CSVParser.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\document.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\OverwriteDlg\OverwriteDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\3Dutils.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="3Dutils.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="3Dutils.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\common\OverwriteDlg\OverwriteDlg.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\3Dutils.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\out.png" />
+    <Image Include="res\right.png" />
+    <Image Include="res\up.png" />
+    <Image Include="res\rotX.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotY.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotZ.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\font-awesome-double-angle-down.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\font-awesome-double-angle-up.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\doc-arrow-in.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\doc-arrow-in-gray.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\doc-arrow-in-blue.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+﻿# angle X; angle Y; angle Z; "short name[7]"[; "full name[31]"]
+-ABS(ATAND(TAND(45)/COSD(45)));0;45;"Изо XZY";"Изометрия XZY"
+-ABS(ATAND(TAND(45)/COSD(45)));0;-45;"XZY 270";"Изометрия XZY 270"
