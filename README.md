@@ -3,7 +3,7 @@
 Код нестабильный, используйте на свой риск.  
 Сохраняйте работу прежде чем использовать любые представленые функции.
 
-В коде используется:
+В проекте используется:
  * [CGridListCtrlEx](https://github.com/snakefoot/cgridlistctrlex)
  * [NumericEdit](https://github.com/mghini/numeric-edit)
  * [CSV Parser](https://github.com/AriaFallah/csv-parser)
