@@ -1,1 +1,5 @@
 /_devel/
+/patch/
+*.7z
+*.exp
+*.lib
