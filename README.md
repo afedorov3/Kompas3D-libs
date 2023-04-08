@@ -4,7 +4,7 @@
 Сохраняйте работу прежде чем использовать любые представленые функции.
 
 В проекте используется:
- * [CGridListCtrlEx](https://github.com/snakefoot/cgridlistctrlex)
+ * [CGridListCtrlEx](https://www.codeproject.com/Articles/29064/CGridListCtrlEx-Grid-Control-Based-on-CListCtrl)
  * [NumericEdit](https://github.com/mghini/numeric-edit)
  * [CSV Parser](https://github.com/AriaFallah/csv-parser)
  * [CSVWriter](https://github.com/al-eax/CSVWriter)
