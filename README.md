@@ -9,6 +9,7 @@
  * [CSV Parser](https://github.com/AriaFallah/csv-parser)
  * [CSVWriter](https://github.com/al-eax/CSVWriter)
  * [code from iproute2](https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/)
+ * [code from strace](https://strace.io/)
  * [code from Notepad2](https://www.flos-freeware.ch/notepad2.html)
  * [CreateDirectoryRecursively() by Cygon](http://blog.nuclex-games.com/2012/06/how-to-create-directories-recursively-with-win32/)
  * [bit manipulation code by invaliddata](https://stackoverflow.com/questions/3142867/finding-bit-positions-in-an-unsigned-32-bit-integer)

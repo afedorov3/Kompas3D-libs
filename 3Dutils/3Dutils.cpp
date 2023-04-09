@@ -190,6 +190,11 @@ C3DutilsApp::C3DutilsApp()
 	m_selcolor = DEFCOLOR;
 	m_seltolerance = CT_EXACT;
 
+	m_oripreview = FALSE;
+	m_oriautoplace = OrientDlg::AUTOPLACE_DEFAULT;
+	m_oriposX = LONG_MIN;
+	m_oriposY = LONG_MIN;
+
 	m_chusecolor = useColorOur;
 	m_chcolor = DEFCOLOR;
 }
@@ -563,8 +568,13 @@ BOOL C3DutilsApp::SelectCommit( ksAPI7::IKompasDocument3DPtr & doc3d, _variant_t
 
 BOOL C3DutilsApp::PlacementDialog( ksAPI7::IKompasDocument3DPtr & doc3d )
 {
-	OrientDlg Dlg( doc3d );
-	return Dlg.DoModal() == IDOK ? TRUE : FALSE;
+	OrientDlg Dlg( doc3d, m_oripreview, m_oriautoplace, m_oriposX, m_oriposY );
+	INT_PTR ret = Dlg.DoModal();
+	m_oripreview = Dlg.GetPreview();
+	m_oriautoplace = Dlg.GetAutoplace();
+	Dlg.GetWinPos(m_oriposX, m_oriposY);
+
+	return ret;
 }
 
 BOOL C3DutilsApp::VariablesExport( ksAPI7::IKompasDocument3DPtr & doc3d, LONG embodiment )

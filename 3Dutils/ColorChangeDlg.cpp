@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+
 #include "3Dutils.h"
 #include "ColorChangeDlg.h"
 

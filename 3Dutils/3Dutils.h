@@ -112,6 +112,12 @@ private:
 	ULONG m_chusecolor;
 	COLORREF m_chcolor;
 
+	// Orient dialog
+	BOOL m_oripreview;
+	UINT m_oriautoplace;
+	LONG m_oriposX;
+	LONG m_oriposY;
+
 	std::vector<orient_t> m_orients;
 };
 

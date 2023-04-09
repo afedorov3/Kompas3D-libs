@@ -2,9 +2,10 @@
 //
 
 #include "stdafx.h"
+#include "afxdialogex.h"
+
 #include "3Dutils.h"
 #include "SelectParmDlg.h"
-#include "afxdialogex.h"
 
 #include <string>
 

@@ -2,9 +2,10 @@
 //
 
 #include "stdafx.h"
+#include "afxdialogex.h"
+
 #include "3Dutils.h"
 #include "OrientDlg.h"
-#include "afxdialogex.h"
 
 #include <strsafe.h>
 #include <math.h>
@@ -14,7 +15,8 @@
 
 IMPLEMENT_DYNAMIC(OrientDlg, CDialogEx)
 
-OrientDlg::OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, LONG posX /* = LONG_MIN */, LONG posY /*= LONG_MIN*/, bool preview /* = false */, CWnd* pParent /* = NULL*/)
+OrientDlg::OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, BOOL preview /* = FALSE */, UINT autoplace /* = AUTOPLACE_DEFAULT*/,
+                     LONG posX /* = LONG_MIN */, LONG posY /*= LONG_MIN*/, CWnd* pParent /* = NULL*/)
 	: CDialogEx(OrientDlg::IDD, pParent),
 	m_vproj(NULL),
 	m_place(NULL),
@@ -26,15 +28,18 @@ OrientDlg::OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, LONG posX /* = LONG_MI
 	m_curX(0.0),
 	m_curY(0.0),
 	m_curZ(0.0),
-	m_active(false),
-	m_tooltip(false),
+	m_active(FALSE),
+	m_tooltip(FALSE),
 	m_previewTimer(0),
-	m_autoplace(AUTOPLACE_DEFAULT),
+	m_preview(preview),
+	m_wPosX(posX),
+	m_wPosY(posY),
+	m_autoplace(autoplace),
 	m_orients(theApp.GetOrients()),
 	m_extBtn(NULL),
 	m_addBtn(NULL),
-	m_extended(false),
-	m_addtodoc(false),
+	m_extended(FALSE),
+	m_addtodoc(FALSE),
 	m_hExtDn(NULL),
 	m_hExtUp(NULL),
 	m_hDocArrOff(NULL),
@@ -68,16 +73,10 @@ OrientDlg::OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, LONG posX /* = LONG_MI
 		return;
 
 	m_drawHwnd = (HWND)docFrame->GetHWND();
-
-	m_wPosX = posX;
-	m_wPosY = posY;
-	m_preview = preview;
 }
 
 OrientDlg::~OrientDlg()
 {
-	if (m_previewTimer)
-		KillTimer(m_previewTimer);
 	if (m_place)
 		m_place->Release();
 	if (m_vproj)
@@ -137,7 +136,7 @@ BOOL OrientDlg::OnInitDialog()
 	UpdateControls();
 
 	if (m_toolTip.Create(this)) {
-		m_tooltip = true;
+		m_tooltip = TRUE;
 		m_toolTip.AddTool(GetDlgItem(IDC_ICONX), L"Вокруг оси X");
 		m_toolTip.AddTool(GetDlgItem(IDC_ICONY), L"Вокруг оси Y");
 		m_toolTip.AddTool(GetDlgItem(IDC_ICONZ), L"Вокруг оси Z");
@@ -157,9 +156,51 @@ BOOL OrientDlg::OnInitDialog()
 
 	m_hAccelTable = LoadAccelerators(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_ORIENTACCELERATORS));
 
-	m_active = true;
+	m_active = TRUE;
 
 	return FALSE;
+}
+
+void OrientDlg::Confirm()
+{
+	m_active = FALSE;
+
+	if (m_previewTimer != 0)
+		KillTimer(m_previewTimer), m_previewTimer = 0;
+
+	// update data in case of NC activate
+	switch(::GetDlgCtrlID(::GetFocus())) {
+	case IDC_EDITX:
+		m_angleX.GetData(m_curX);
+		break;
+	case IDC_EDITY:
+		m_angleY.GetData(m_curY);
+		break;
+	case IDC_EDITZ:
+		m_angleZ.GetData(m_curZ);
+		break;
+	}
+
+	Orient();
+
+	EndDialog(IDOK);
+}
+
+void OrientDlg::Cancel()
+{
+	m_active = FALSE;
+
+	if (m_previewTimer != 0)
+		KillTimer(m_previewTimer), m_previewTimer = 0;
+
+	m_curX = m_initX;
+	m_curY = m_initY;
+	m_curZ = m_initZ;
+	UpdateControls();
+
+	Orient();
+
+	EndDialog(IDCANCEL);
 }
 
 void OrientDlg::AddOrientBtns()
@@ -340,9 +381,8 @@ void OrientDlg::Preview(UINT delay /* = 0 */)
 			KillTimer(m_previewTimer), m_previewTimer = 0;
 			Orient();
 		}
-	} else if (m_previewTimer != 0) {
+	} else if (m_previewTimer != 0)
 		KillTimer(m_previewTimer), m_previewTimer = 0;
-	}
 }
 
 BOOL OrientDlg::AddDocProjection(const C3DutilsApp::orient_t& orient)
@@ -391,6 +431,8 @@ BEGIN_MESSAGE_MAP(OrientDlg, CDialog)
 	ON_WM_DESTROY()
 	ON_WM_NCACTIVATE()
 	ON_WM_CLOSE()
+	ON_BN_CLICKED(IDOK, &OrientDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDCANCEL, &OrientDlg::OnBnClickedCancel)
 	ON_WM_HSCROLL()
 	ON_EN_KILLFOCUS(IDC_EDITX, &OrientDlg::OnEnKillfocusEditX)
 	ON_EN_KILLFOCUS(IDC_EDITY, &OrientDlg::OnEnKillfocusEditY)
@@ -406,8 +448,6 @@ BEGIN_MESSAGE_MAP(OrientDlg, CDialog)
 	ON_BN_CLICKED(IDC_EXTBTN, &OrientDlg::OnBnClickedExtBtn)
 	ON_BN_CLICKED(IDC_ADDBTN, &OrientDlg::OnBnClickedAddBtn)
 	ON_CONTROL_RANGE(BN_CLICKED, IDC_ORIENT0, IDC_ORIENT0 + MAX_ORIENTS, OnBnClickedOrient)
-	ON_BN_CLICKED(IDOK, &OrientDlg::OnBnClickedOk)
-	ON_BN_CLICKED(IDCANCEL, &OrientDlg::OnBnClickedCancel)
 	ON_WM_TIMER()
 	ON_WM_MOVING()
 	ON_WM_NCLBUTTONDBLCLK()
@@ -419,7 +459,6 @@ void OrientDlg::OnDestroy()
 {
 	CDialogEx::OnDestroy();
 
-	m_active = false;
 	for(auto& btn : m_oribtns) {
 		if (btn) {
 			btn->DestroyWindow();
@@ -453,17 +492,25 @@ void OrientDlg::OnDestroy()
 
 BOOL OrientDlg::OnNcActivate(BOOL bActive)
 {
-	if (!bActive && m_active) {
-		m_active = false;
-		EndDialog(IDOK);
-	}
+	if (!bActive && m_active)
+		Confirm();
 
 	return TRUE;
 }
 
 void OrientDlg::OnClose()
 {
-	EndDialog(IDCANCEL);
+	Cancel();
+}
+
+void OrientDlg::OnBnClickedOk()
+{
+	Confirm();
+}
+
+void OrientDlg::OnBnClickedCancel()
+{
+	Cancel();
 }
 
 void OrientDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
@@ -510,6 +557,7 @@ void OrientDlg::OnNotifyEditX(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	m_angleX.GetData(m_curX);
 	m_sliderX.SetPos(m_curX);
+	m_previewBtn->SetCheck(BST_CHECKED), m_preview = TRUE;
 	Preview();
 
 	*pResult = 0;
@@ -519,6 +567,7 @@ void OrientDlg::OnNotifyEditY(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	m_angleY.GetData(m_curY);
 	m_sliderY.SetPos(m_curY);
+	m_previewBtn->SetCheck(BST_CHECKED), m_preview = TRUE;
 	Preview();
 
 	*pResult = 0;
@@ -528,6 +577,7 @@ void OrientDlg::OnNotifyEditZ(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	m_angleZ.GetData(m_curZ);
 	m_sliderZ.SetPos(m_curZ);
+	m_previewBtn->SetCheck(BST_CHECKED), m_preview = TRUE;
 	Preview();
 
 	*pResult = 0;
@@ -538,8 +588,8 @@ void OrientDlg::OnBnClickedReset()
 	m_curX = m_initX;
 	m_curY = m_initY;
 	m_curZ = m_initZ;
-
 	UpdateControls();
+
 	Preview();
 }
 
@@ -588,44 +638,9 @@ void OrientDlg::OnBnClickedOrient(UINT nID)
 
 	if (m_addtodoc) {
 		AddDocProjection(orient);
-		CDialogEx::OnOK();
+		Confirm();
 	} else
 		Preview();
-}
-
-void OrientDlg::OnBnClickedOk()
-{
-	bool orient = false;
-	// update data in case of NC activate
-	switch(::GetDlgCtrlID(::GetFocus())) {
-	case IDC_EDITX:
-		m_angleX.GetData(m_curX);
-		orient = true;
-		break;
-	case IDC_EDITY:
-		m_angleY.GetData(m_curY);
-		orient = true;
-		break;
-	case IDC_EDITZ:
-		m_angleZ.GetData(m_curZ);
-		orient = true;
-		break;
-	}
-	if (orient || !m_preview)
-		Orient();
-
-	CDialogEx::OnOK();
-}
-
-void OrientDlg::OnBnClickedCancel()
-{
-	m_curX = m_initX;
-	m_curY = m_initY;
-	m_curZ = m_initZ;
-	UpdateControls();
-	Orient();
-
-	CDialogEx::OnCancel();
 }
 
 void OrientDlg::OnStnClickedIconX()

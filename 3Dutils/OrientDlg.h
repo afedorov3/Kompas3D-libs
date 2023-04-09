@@ -19,18 +19,18 @@ public:
 		AUTOPLACE_DEFAULT = AUTOPLACE_BOTRIGHT
 	} AUTOPLACE;
 
-	OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, LONG posX = LONG_MIN, LONG posY = LONG_MIN, bool preview = false, CWnd* pParent = NULL);
+	OrientDlg(ksAPI7::IKompasDocument3DPtr& doc3d, BOOL preview = FALSE, UINT autoplace = AUTOPLACE_DEFAULT, LONG posX = LONG_MIN, LONG posY = LONG_MIN, CWnd* pParent = NULL);
 	virtual ~OrientDlg();
 
-	double GetX() { return m_curX; };
-	double GetY() { return m_curY; };
-	double GetZ() { return m_curZ; };
-	bool GetPreview() { return m_preview; };
+	DOUBLE GetX() { return m_curX; };
+	DOUBLE GetY() { return m_curY; };
+	DOUBLE GetZ() { return m_curZ; };
+	BOOL GetPreview() { return m_preview; };
 	void SetPreview(bool enabled) { m_preview = enabled; };
 	void GetWinPos(LONG& PosX, LONG& PosY) { PosX = m_wPosX; PosY = m_wPosY; };
 	void SetWinPos(LONG PosX, LONG PosY) { m_wPosX = PosX; m_wPosY = PosY; };
 	UINT GetAutoplace() { return (UINT)m_autoplace; };
-	void SetAutoplace(UINT autoplace) { m_autoplace = autoplace > AUTOPLACE_BOTRIGHT ? AUTOPLACE_BOTRIGHT : (AUTOPLACE)autoplace; };
+	void SetAutoplace(UINT autoplace) { m_autoplace = autoplace; };
 
 // Dialog Data
 	enum { IDD = IDD_ORIENT };
@@ -47,6 +47,8 @@ private:
 		PREVIEW_TIMER = 1
 	};
 
+	void Confirm();
+	void Cancel();
 	void AddOrientBtns();
 	void PlaceWindow(LONG height = LONG_MIN);
 	void UpdateControls(int sel = ALL);
@@ -58,14 +60,14 @@ private:
 	IViewProjectionPtr m_vproj;
 	IPlacementPtr m_place;
 	HWND m_drawHwnd;
-	double m_initX, m_initY, m_initZ;
-	double m_curX, m_curY, m_curZ;
-	bool m_preview;
-	bool m_active;
-	bool m_tooltip;
+	DOUBLE m_initX, m_initY, m_initZ;
+	DOUBLE m_curX, m_curY, m_curZ;
+	BOOL m_active;
+	BOOL m_tooltip;
+	BOOL m_preview;
 	LONG m_wPosX, m_wPosY, m_wWidth, m_wHeight, m_wHeightExt, m_wCaptHeight;
+	UINT m_autoplace;
 	UINT_PTR m_previewTimer;
-	AUTOPLACE m_autoplace;
 	const std::vector<C3DutilsApp::orient_t>& m_orients;
 	std::vector<CButton*> m_oribtns;
 
@@ -80,8 +82,8 @@ private:
 	CButton *m_extBtn;
 	CButton *m_addBtn;
 	CStatic *m_oriSplit;
-	bool m_extended;
-	bool m_addtodoc;
+	BOOL m_extended;
+	BOOL m_addtodoc;
 	HICON m_hExtDn;
 	HICON m_hExtUp;
 	HICON m_hDocArrOff;
