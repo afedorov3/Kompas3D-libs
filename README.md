@@ -1,8 +1,5 @@
 # Библиотеки для CAD системы Kompas3D
 
-Код нестабильный, используйте на свой риск.  
-Сохраняйте работу прежде чем использовать любые представленые функции.
-
 В проекте используется:
  * [CGridListCtrlEx](https://www.codeproject.com/Articles/29064/CGridListCtrlEx-Grid-Control-Based-on-CListCtrl)
  * [NumericEdit](https://github.com/mghini/numeric-edit)
