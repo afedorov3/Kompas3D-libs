@@ -1,6 +1,7 @@
 /_devel/
 /patch/
-*.7z
+/*.7z
+/*.zip
 *.exp
 *.lib
 *.rtw
