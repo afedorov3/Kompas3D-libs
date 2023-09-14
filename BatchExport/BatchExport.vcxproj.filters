@@ -127,6 +127,9 @@
     <ClInclude Include="..\common\OverwriteDlg\OverwriteDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\BatchExport.rc2">

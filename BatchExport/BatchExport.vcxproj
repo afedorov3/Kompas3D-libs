@@ -310,6 +310,7 @@
     <ClInclude Include="CGridListCtrlEx\CGridColumnTraitText.h" />
     <ClInclude Include="CGridListCtrlEx\CGridRowTrait.h" />
     <ClInclude Include="CGridListCtrlEx\CGridRowTraitText.h" />
+    <ClInclude Include="version.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\batchexport.ico" />

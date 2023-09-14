@@ -301,6 +301,7 @@
     <ClInclude Include="SelectParmDlg.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="3Dutils.h" />
+    <ClInclude Include="version.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\3Dutils.ico" />
